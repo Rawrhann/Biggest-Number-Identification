@@ -5,3 +5,7 @@
 #Record a demo presenting your program [less than 2 min only]
 #Send the demo directly to sir Danilo's messenger
 #Deadline before Jan 13, 2023
+
+#Pseudo code
+
+
