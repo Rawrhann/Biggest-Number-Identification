@@ -16,24 +16,29 @@ import tkinter.font
 from tkinter import font
 from tkinter.simpledialog import Dialog
 
-#Identification of larger numbers
-#Between the first and second number, check which is higher
-#Between the first and third number, check which is higher
-#Between the second and third number, check which is higher
-#The number that will get a higher result twice would be the highest between them all
-#Display that number
-def identify(highest_number):
-    if first_number_variable > second_number_variable and first_number_variable > third_number_variable:
-        highest_number = first_number_variable
-    elif second_number_variable > third_number_variable:
-        highest_number = second_number_variable
-    else:
-        highest_number = third_number_variable
-    
-    highest_number_label = tk.Label(main_window, font=courier_font, bg="#454545", fg="white", relief="solid", justify=LEFT)
-    highest_number_label.configure(text=str (("I am ", (highest_number),  " years old")))
-        
+
 #Asking for numbers and checking if it is a number
+
+#Identification of larger numbers
+def identify():
+    if any (entry == "" for entry in (first_number_entry.get(), second_number_entry.get(), third_number_entry.get())):
+        messagebox.showerror("Input", "Don't leave blank entries")
+        return
+    
+    try:
+        first_number_variable = float(first_number_variable.get())
+        second_number_variable = float(second_number_variable.get())
+        third_number_variable = float(third_number_variable.get())
+
+    except ValueError:
+        return
+
+    if first_number_variable > second_number_variable and first_number_variable > third_number_variable:
+        return first_number_variable
+    elif second_number_variable > third_number_variable:
+        return second_number_variable
+    else:
+        return third_number_variable
 
 main_window = tk.Tk() 
 main_window.title ("Startup")
@@ -41,7 +46,7 @@ main_window.config(bg = "#212121")
 font.families()
 courier_font = ("courier", 13, 'bold')
 
-# for storing numbers
+#for storing numbers
 first_number_variable=tk.IntVar
 second_number_variable=tk.IntVar
 third_number_variable=tk.IntVar
@@ -66,6 +71,8 @@ third_number_label = tk.Label(main_window, text = 'Third Number', font=courier_f
 #Check if the third number is a number
 
 
+#The number that will get a higher result twice would be the highest between them all
+#Display that number
 
 
 
