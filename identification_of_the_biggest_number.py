@@ -26,19 +26,24 @@ def identify():
         return
     
     try:
-        first_number_variable = float(first_number_variable.get())
-        second_number_variable = float(second_number_variable.get())
-        third_number_variable = float(third_number_variable.get())
+        first_number = float(first_number_entry.get())
+        second_number = float(second_number_entry.get())
+        third_number = float(third_number_entry.get())
+        
 
     except ValueError:
         return
 
-    if first_number_variable > second_number_variable and first_number_variable > third_number_variable:
-        return first_number_variable
-    elif second_number_variable > third_number_variable:
-        return second_number_variable
-    else:
-        return third_number_variable
+    def largest():
+        if first_number > second_number and first_number > third_number:
+            return first_number
+        elif second_number > third_number:
+            return second_number
+        else:
+            return third_number
+        
+    largest_number = largest(first_number, second_number, third_number)
+    largest_number_display
 
 main_window = tk.Tk() 
 main_window.title ("Startup")
@@ -46,33 +51,31 @@ main_window.config(bg = "#212121")
 font.families()
 courier_font = ("courier", 13, 'bold')
 
-#for storing numbers
-first_number_variable=tk.IntVar
-second_number_variable=tk.IntVar
-third_number_variable=tk.IntVar
+
 
 button_start = Button(main_window, width = "15", height = "2", text = "Identify", command = identify, bg="green", fg="white")
 button_exit = Button(main_window, width = "15", height = "2", text = "Exit", command = exit, bg="red", fg="white")
 
 #Input First number
-first_number_entry = tk.Entry(main_window, textvariable = first_number_variable, font=('calibre',10,'normal'))
+first_number_entry = tk.Entry(main_window, font=('calibre',10,'normal'))
 first_number_label = tk.Label(main_window, text = 'First Number', font=courier_font, bg="#454545", fg="white", relief="solid", justify="left")
 #Check if the first number is a number
 
 
 #Input second number
-second_number_entry = tk.Entry(main_window, textvariable = second_number_variable, font=('calibre',10,'normal'))
+second_number_entry = tk.Entry(main_window, font=('calibre',10,'normal'))
 second_number_label = tk.Label(main_window, text = 'Second Number', font=courier_font, bg="#454545", fg="white", relief="solid", justify="left")
 #Check if the second number is a number
 
 #Input third number
-third_number_entry = tk.Entry(main_window, textvariable = third_number_variable, font=('calibre',10,'normal'))
+third_number_entry = tk.Entry(main_window, font=('calibre',10,'normal'))
 third_number_label = tk.Label(main_window, text = 'Third Number', font=courier_font, bg="#454545", fg="white", relief="solid", justify=LEFT)
 #Check if the third number is a number
 
 
 #The number that will get a higher result twice would be the highest between them all
 #Display that number
+largest_number_display = tk.Label(main_window, text="")
 
 
 
