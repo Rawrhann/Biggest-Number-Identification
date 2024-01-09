@@ -35,7 +35,7 @@ def identify():
         messagebox.showerror("Input", "Only input numbers")
         return
 
-    def largest():
+    def largest(first_number, second_number, third_number):
         if first_number > second_number and first_number > third_number:
             return first_number
         elif second_number > third_number:
@@ -44,7 +44,9 @@ def identify():
             return third_number
         
     largest_number = largest(first_number, second_number, third_number)
-    largest_number_display.configure
+    largest_number_display.configure(text=(largest_number))
+    largest_number_display_words = tk.Label(main_window, text="The largest number among the 3 inputs are", font=courier_font, bg="#454545", fg="white", relief="solid", justify="left")
+    largest_number_display_words.place(height=30, width=150, x=100, y=400)
 
 main_window = tk.Tk() 
 main_window.title ("Startup")
@@ -70,13 +72,14 @@ second_number_label = tk.Label(main_window, text = 'Second Number', font=courier
 
 #Input third number
 third_number_entry = tk.Entry(main_window, font=('calibre',10,'normal'))
-third_number_label = tk.Label(main_window, text = 'Third Number', font=courier_font, bg="#454545", fg="white", relief="solid", justify=LEFT)
+third_number_label = tk.Label(main_window, text = 'Third Number', font=courier_font, bg="#454545", fg="white", relief="solid", justify="left")
 #Check if the third number is a number
 
 
 #The number that will get a higher result twice would be the highest between them all
 #Display that number
-largest_number_display = tk.Label(main_window)
+largest_number_display = tk.Label(main_window, )
+
 
 
 
