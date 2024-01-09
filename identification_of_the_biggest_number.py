@@ -32,6 +32,7 @@ def identify():
         
 
     except ValueError:
+        messagebox.showerror("Input", "Only input numbers")
         return
 
     def largest():
@@ -43,7 +44,7 @@ def identify():
             return third_number
         
     largest_number = largest(first_number, second_number, third_number)
-    largest_number_display
+    largest_number_display.configure
 
 main_window = tk.Tk() 
 main_window.title ("Startup")
@@ -75,7 +76,7 @@ third_number_label = tk.Label(main_window, text = 'Third Number', font=courier_f
 
 #The number that will get a higher result twice would be the highest between them all
 #Display that number
-largest_number_display = tk.Label(main_window, text="")
+largest_number_display = tk.Label(main_window)
 
 
 
@@ -90,6 +91,7 @@ third_number_label.place(height=30, width=150, x=100, y=250)
 first_number_entry.place(height=30, width=150, x=100, y=100)
 second_number_entry.place(height=30, width=150, x=100, y=200)
 third_number_entry.place(height=30, width=150, x=100, y=300)
+largest_number_display.place(height=30, width=150, x=100, y=400)
 
 #Main window size
 main_window.geometry("400x500")
