@@ -45,14 +45,16 @@ def identify():
         
     largest_number = largest(first_number, second_number, third_number)
     largest_number_display.configure(text=(largest_number))
-    largest_number_display_words = tk.Label(main_window, text="The largest number among the 3 inputs are", font=courier_font, bg="#454545", fg="white", relief="solid", justify="left")
-    largest_number_display_words.place(height=30, width=150, x=100, y=400)
+    largest_number_display_words = tk.Label(main_window, text="The largest number\n among the 3 inputs are", font=display_font, bg="#454545", fg="white", relief="solid", justify="center")
+    largest_number_display_words.place(height=60, width=200, x=75, y=300)
+    largest_number_display.place(height=30, width=150, x=100, y=360)
 
 main_window = tk.Tk() 
 main_window.title ("Startup")
 main_window.config(bg = "#212121")
 font.families()
 courier_font = ("courier", 13, 'bold')
+display_font = ("Eccentric", 10)
 
 
 
@@ -60,41 +62,36 @@ button_start = Button(main_window, width = "15", height = "2", text = "Identify"
 button_exit = Button(main_window, width = "15", height = "2", text = "Exit", command = exit, bg="red", fg="white")
 
 #Input First number
-first_number_entry = tk.Entry(main_window, font=('calibre',10,'normal'))
-first_number_label = tk.Label(main_window, text = 'First Number', font=courier_font, bg="#454545", fg="white", relief="solid", justify="left")
+first_number_entry = tk.Entry(main_window, font=('calibre',10,'normal'), justify="center")
+first_number_label = tk.Label(main_window, text = 'First Number', font=courier_font, bg="#454545", fg="white", relief="solid", justify="center")
 #Check if the first number is a number
 
 
 #Input second number
-second_number_entry = tk.Entry(main_window, font=('calibre',10,'normal'))
-second_number_label = tk.Label(main_window, text = 'Second Number', font=courier_font, bg="#454545", fg="white", relief="solid", justify="left")
+second_number_entry = tk.Entry(main_window, font=('calibre',10,'normal'), justify="center")
+second_number_label = tk.Label(main_window, text = 'Second Number', font=courier_font, bg="#454545", fg="white", relief="solid", justify="center")
 #Check if the second number is a number
 
 #Input third number
-third_number_entry = tk.Entry(main_window, font=('calibre',10,'normal'))
-third_number_label = tk.Label(main_window, text = 'Third Number', font=courier_font, bg="#454545", fg="white", relief="solid", justify="left")
+third_number_entry = tk.Entry(main_window, font=('calibre',10,'normal'), justify="center")
+third_number_label = tk.Label(main_window, text = 'Third Number', font=courier_font, bg="#454545", fg="white", relief="solid", justify="center")
 #Check if the third number is a number
 
 
 #The number that will get a higher result twice would be the highest between them all
 #Display that number
-largest_number_display = tk.Label(main_window, )
-
-
-
-
+largest_number_display = tk.Label(main_window)
 
 #Placements in the main window
 button_start.place(x=0, y=0)
 button_exit.place(x=0, y=460)
 first_number_label.place(height=30, width=150, x=100, y=50)
-second_number_label.place(height=30, width=150, x=100, y=150)
-third_number_label.place(height=30, width=150, x=100, y=250)
+second_number_label.place(height=30, width=150, x=100, y=125)
+third_number_label.place(height=30, width=150, x=100, y=200)
 
-first_number_entry.place(height=30, width=150, x=100, y=100)
-second_number_entry.place(height=30, width=150, x=100, y=200)
-third_number_entry.place(height=30, width=150, x=100, y=300)
-largest_number_display.place(height=30, width=150, x=100, y=400)
+first_number_entry.place(height=30, width=150, x=100, y=75)
+second_number_entry.place(height=30, width=150, x=100, y=150)
+third_number_entry.place(height=30, width=150, x=100, y=225)
 
 #Main window size
 main_window.geometry("400x500")
