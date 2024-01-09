@@ -8,13 +8,11 @@
 
 #Pseudo code
 from tkinter import *
-from tkinter import simpledialog
-from tkinter import Tk, ttk
 import tkinter as tk
 from tkinter import Label, Entry, Button, messagebox
 import tkinter.font
 from tkinter import font
-from tkinter.simpledialog import Dialog
+
 
 
 #Asking for numbers and checking if it is a number
@@ -49,14 +47,15 @@ def identify():
     largest_number_display_words.place(height=60, width=200, x=75, y=300)
     largest_number_display.place(height=30, width=150, x=100, y=360)
 
+#Main User Interface
 main_window = tk.Tk() 
 main_window.title ("Startup")
 main_window.config(bg = "#212121")
+
+#Fonts
 font.families()
 courier_font = ("courier", 13, 'bold')
 display_font = ("Eccentric", 10)
-
-
 
 button_start = Button(main_window, width = "15", height = "2", text = "Identify", command = identify, bg="green", fg="white")
 button_exit = Button(main_window, width = "15", height = "2", text = "Exit", command = exit, bg="red", fg="white")
@@ -76,7 +75,6 @@ second_number_label = tk.Label(main_window, text = 'Second Number', font=courier
 third_number_entry = tk.Entry(main_window, font=('calibre',10,'normal'), justify="center")
 third_number_label = tk.Label(main_window, text = 'Third Number', font=courier_font, bg="#454545", fg="white", relief="solid", justify="center")
 #Check if the third number is a number
-
 
 #The number that will get a higher result twice would be the highest between them all
 #Display that number
